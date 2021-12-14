@@ -1,13 +1,16 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from 'react';
+import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import RenderHTML from "react-native-render-html";
 
 export default function Body(props) {
 
     const dados = props.dados;
+    const html = `<div style="font-size: 20px;">${dados.body}</div>`;
+    const {width} = useWindowDimensions();
 
     return (
         <View style={styles.container}>
-            <Text style={styles.textBody}>{dados.body}</Text>
+             <RenderHTML contentWidth={width} source={{html}} />
         </View>
     )
 }
