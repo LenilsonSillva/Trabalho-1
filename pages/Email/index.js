@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { View, StyleSheet, FlatList, ScrollView } from 'react-native'
+import { StyleSheet, ScrollView } from 'react-native'
 import Body from './Components/Body';
 import Title from './Components/Title'
 import UserInfo from './Components/UserInfo'

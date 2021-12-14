@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { StyleSheet, View, useWindowDimensions } from 'react-native';
 import RenderHTML from "react-native-render-html";
 
 export default function Body(props) {

@@ -1,4 +1,3 @@
-import { EventEmitter } from 'expo-modules-core';
 import React from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import MIcon from 'react-native-vector-icons/MaterialIcons';
