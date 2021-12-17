@@ -1,8 +1,8 @@
 <h1 align="center">Clone do Gmail (Trabalho 1)</h1>
 
-Projeto das aulas Desenvolvimento para Dispositivos Móveis consistente em criar um aplicativo de email parecido com o aplicativo Gmail usando React Native.
+Projeto das aulas de Desenvolvimento para Dispositivos Móveis que consistente em criar um aplicativo de email parecido com o aplicativo Gmail usando React Native.
 
-<h3> 📷 Imagens do projeto </h1>
+### 📷 Imagens do projeto
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/79605996/146563122-53aaa2ff-369e-4e09-94a3-0a8ac53b9ccb.png" width="270">    <img src="https://user-images.githubusercontent.com/79605996/146563151-3896e0cb-080f-41e7-8575-4c9843f1fee6.png" width="270">
