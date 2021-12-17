@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, ScrollView } from 'react-native'
+import { StyleSheet, ScrollView, View } from 'react-native'
 import Body from './Components/Body';
 import Title from './Components/Title'
 import UserInfo from './Components/UserInfo'
+import Reply from './Components/Reply';
 
 export default function Email({route}) {
 
@@ -20,10 +21,11 @@ export default function Email({route}) {
         }, []);
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container} contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-between', flexDirection: 'column' }}>
             <Title dados={data}/>
             <UserInfo dados={data}/>
             <Body dados={data}/>
+            <View><Reply/></View>
         </ScrollView>
     )
 }

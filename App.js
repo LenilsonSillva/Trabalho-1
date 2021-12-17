@@ -26,7 +26,7 @@ export default function App() {
       <StatusBar style="auto" backgroundColor="white"/>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
-        <Stack.Screen name="Email" component={Email} options={{title: ''}}/>
+        <Stack.Screen name="Email" component={Email} options={{title: '', headerShadowVisible: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

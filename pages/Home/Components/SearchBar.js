@@ -28,14 +28,13 @@ export default function SearchBar(props) {
 
 const styles = StyleSheet.create({
     container: {
-        height: 95
+        height: 103
     },
     inputBox: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: -5,
     },
     input: {
         flex: 1,
@@ -69,6 +68,6 @@ const styles = StyleSheet.create({
     chatBox: {
         marginBottom: 10,
         marginLeft: 15,
-        top: 5,
+        top: 6,
     }
 })

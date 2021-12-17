@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, useWindowDimensions } from 'react-native';
+import { StyleSheet, View, useWindowDimensions, Dimensions, Text} from 'react-native';
 import RenderHTML from "react-native-render-html";
 
 export default function Body(props) {
@@ -10,7 +10,7 @@ export default function Body(props) {
 
     return (
         <View style={styles.container}>
-             <RenderHTML contentWidth={width} source={{html}} />
+             <RenderHTML contentWidth={width} source={{html}}/>
         </View>
     )
 }
@@ -19,8 +19,9 @@ const styles = StyleSheet.create({
     container: {
         marginTop: 40,
         marginHorizontal: 10,
+        flex: 1,
     },
     textBody: {
         fontSize: 18
-    }
+    },
 })

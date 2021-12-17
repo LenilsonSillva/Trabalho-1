@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import { Image, StyleSheet, Text, View, TouchableOpacity, Animated } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
 import MIcon from 'react-native-vector-icons/MaterialIcons';
+import FAIcons from 'react-native-vector-icons/FontAwesome';
 import { useFonts } from 'expo-font';
 
 export default function UserInfo(props) {
@@ -57,25 +58,31 @@ export default function UserInfo(props) {
 
     return (
         <View>
-        <View style={styles.container}>
-            <View>
-                <Image source={{ uri: dados.picture}} style={styles.senderPicture}/>
+        <View style={styles.container2}>
+            <View style={styles.container3}>
+                <View>
+                    <Image source={{ uri: dados.picture}} style={styles.senderPicture}/>
+                </View>
+                <View style={styles.infoBox}>
+                    <Text style={styles.senderName}>{dados.from}  <Text style={styles.timeView}>{dados.time}</Text></Text>
+                    <TouchableOpacity style={styles.toMeView} activeOpacity={1} onPress={arrowFx ? rotaOff : rotaOn}>
+                        <Text style={styles.toMeText}>para {dados.to}</Text>
+                        <Animated.View 
+                        style={{transform: [{rotate: rotation.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: ['0deg', '180deg'],
+                                    })
+                                }]
+                            }}
+                        >
+                            <Icon name="chevron-down-outline" style={{fontSize: 15}} color='grey'/>
+                        </Animated.View>
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.infoBox}>
-                <Text style={styles.senderName}>{dados.from}  <Text style={styles.timeView}>{dados.time}</Text></Text>
-                <TouchableOpacity style={styles.toMeView} activeOpacity={1} onPress={arrowFx ? rotaOff : rotaOn}>
-                    <Text style={styles.toMeText}>para {dados.to}</Text>
-                    <Animated.View 
-                    style={{transform: [{rotate: rotation.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: ['0deg', '180deg'],
-                                })
-                            }]
-                        }}
-                    >
-                        <Icon name="chevron-down-outline" style={{fontSize: 15}} color='grey'/>
-                    </Animated.View>
-                </TouchableOpacity>
+            <View style={styles.container4}>
+                <TouchableOpacity><FAIcons name="mail-reply" size={18} style={styles.iconsMore}/></TouchableOpacity>
+                <TouchableOpacity><MIcon name="more-vert" size={24} style={styles.iconsMore}/></TouchableOpacity>
             </View>
         </View>
             {renderInfo(arrowFx)}
@@ -84,9 +91,17 @@ export default function UserInfo(props) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
+    container2: {
         paddingHorizontal: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    container3: {
+        flexDirection: 'row'
+    },
+    container4: {
+        flexDirection: 'row',
+        alignItems: 'center',
     },
     infoBox: {
         justifyContent: 'space-between',
@@ -130,5 +145,10 @@ const styles = StyleSheet.create({
     textSpace: {
         marginVertical: 4,
         color: 'rgb(90,90,90)'
+    },
+    iconsMore: {
+        color: 'rgb(80,80,80)',
+        marginLeft: 23,
+        borderRadius: 10,
     }
 })
